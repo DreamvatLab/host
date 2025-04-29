@@ -1,0 +1,21 @@
+{
+    "Log": {
+        "Level": "debug"
+    },
+    "Consul": {
+        "Addr": "192.168.188.166:8500",
+        "Token": "48359c9b-afc2-341f-9a61-ee37f3b361b6",
+        "Service": {
+            "Name": "img",
+            "Host": "192.168.188.166",
+            "Port": 7300,
+            "Check": {
+                "Interval": "10s",
+                "Timeout": "60s"
+            }
+        }
+    },
+    "MaxRecvMsgSize": 52428800,
+    "MaxSendMsgSize": 52428800,
+    "ListenAddr": ":7300"
+}

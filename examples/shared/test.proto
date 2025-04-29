@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package shared;
+option go_package = "examples/shared";
+
+message TestRequest {
+    string name = 1;
+}
+
+message TestResponse {
+    string message = 1;
+}
+
+service TestService {
+    rpc Test(TestRequest) returns (TestResponse) {}
+}
