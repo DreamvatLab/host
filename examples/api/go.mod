@@ -4,18 +4,16 @@ go 1.24.2
 
 replace github.com/DreamvatLab/host => ../../
 
-replace github.com/DreamvatLab/go => ../../../go
-
 replace shared => ../shared
 
 require (
-	github.com/DreamvatLab/go v1.0.1
+	github.com/DreamvatLab/go v1.0.2
 	github.com/DreamvatLab/host v0.0.0
 	shared v0.0.0
 )
 
 require (
-	github.com/DreamvatLab/oauth2go v1.0.1 // indirect
+	github.com/DreamvatLab/oauth2go v1.0.2 // indirect
 	github.com/andybalholm/brotli v1.1.1 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
