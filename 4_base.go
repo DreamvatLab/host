@@ -30,6 +30,13 @@ func (x *BaseHost) BuildBaseHost() {
 		x.ConfigProvider = xconfig.NewJsonConfigProvider()
 	}
 
+	redisConnStr := x.ConfigProvider.GetString("ConnectionStrings.Redis")
+	if redisConnStr != "" {
+		var err error
+		x.RedisConfig, err = xredis.ParseRedisConfig(redisConnStr)
+		xerr.FatalIfErr(err)
+	}
+
 	if x.URLProvider == nil && x.URIKey != "" && x.RedisConfig != nil {
 		var err error
 		x.URLProvider, err = hurl.NewRedisURLProvider(x.URIKey, x.RedisConfig)
