@@ -3,8 +3,8 @@ module github.com/DreamvatLab/host
 go 1.24.2
 
 require (
-	github.com/DreamvatLab/go v1.0.2
-	github.com/DreamvatLab/oauth2go v1.0.2
+	github.com/DreamvatLab/go v1.0.5
+	github.com/DreamvatLab/oauth2go v1.0.5
 	github.com/fasthttp/router v1.5.4
 	github.com/fasthttp/session/v2 v2.5.9
 	github.com/go-playground/form v3.1.4+incompatible
@@ -18,7 +18,7 @@ require (
 	github.com/pascaldekloe/jwt v1.12.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
-	github.com/redis/go-redis/v9 v9.7.3
+	github.com/redis/go-redis/v9 v9.8.0
 	github.com/valyala/fasthttp v1.61.0
 	golang.org/x/oauth2 v0.29.0
 	google.golang.org/grpc v1.72.0
@@ -48,7 +48,7 @@ require (
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/philhofer/fwd v1.1.3-0.20240916144458-20a13a1f6b7c // indirect
 	github.com/savsgio/gotils v0.0.0-20250408102913-196191ec6287 // indirect
-	github.com/sony/sonyflake v1.2.0 // indirect
+	github.com/sony/sonyflake v1.2.1 // indirect
 	github.com/tidwall/gjson v1.18.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
