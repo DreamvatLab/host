@@ -6,12 +6,7 @@ import (
 	"net/http"
 
 	"github.com/DreamvatLab/go/xhttp"
-	"github.com/DreamvatLab/go/xsync"
 	"github.com/DreamvatLab/host/hurl"
-)
-
-var (
-	_bufferPool = xsync.NewSyncBufferPool(1024)
 )
 
 type APIClient struct {
