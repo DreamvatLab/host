@@ -7,7 +7,7 @@ go 1.24.2
 require (
 	github.com/DreamvatLab/go v1.0.16
 	github.com/DreamvatLab/logs v1.0.2
-	github.com/DreamvatLab/oauth2go v1.0.9
+	github.com/DreamvatLab/oauth2go v1.0.16
 	github.com/fasthttp/router v1.5.4
 	github.com/fasthttp/session/v2 v2.5.9
 	github.com/go-playground/form v3.1.4+incompatible

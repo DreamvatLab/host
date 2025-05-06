@@ -8,8 +8,8 @@ github.com/DreamvatLab/go v1.0.16 h1:Xo0gUQiN4kDkBZmAaJEhNOtOzT66tkT5hQIDqShqjfU
 github.com/DreamvatLab/go v1.0.16/go.mod h1:JaSaX0/UfL1okq8D0oEe/qKG9/6D/T4KUROwK0CSHGI=
 github.com/DreamvatLab/logs v1.0.2 h1:in0FeTtHo4HNWqFt8lL0fgVe1XAq+SKOZrVRGsqPAMg=
 github.com/DreamvatLab/logs v1.0.2/go.mod h1:KbSw80e/kjkRsuMMneHRvZRUkz5kNjJxHZD2nzRbWkw=
-github.com/DreamvatLab/oauth2go v1.0.9 h1:h1Krn8trok24QqMaTW0rW05xq5rEdKhxVeHBly09xHw=
-github.com/DreamvatLab/oauth2go v1.0.9/go.mod h1:quo3JHLeGD9GvPIduWUu9m3eFPGy3QPW1eQmUcFK6qc=
+github.com/DreamvatLab/oauth2go v1.0.16 h1:Zpjqnne9i3gpFtr2pcsEzkZAzx23vYWHLK6T/V4hgp8=
+github.com/DreamvatLab/oauth2go v1.0.16/go.mod h1:CBj+geEt7xAyeH69VuvvgB2ayuoJkzIwDjts2hJ1Das=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
