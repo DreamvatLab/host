@@ -5,7 +5,7 @@ go 1.24.2
 // replace github.com/DreamvatLab/go => ../go
 
 require (
-	github.com/DreamvatLab/go v1.0.14
+	github.com/DreamvatLab/go v1.0.16
 	github.com/DreamvatLab/logs v1.0.2
 	github.com/DreamvatLab/oauth2go v1.0.9
 	github.com/fasthttp/router v1.5.4
@@ -61,7 +61,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/crypto v0.38.0 // indirect
-	golang.org/x/exp v0.0.0-20250408133849-7e4ce0ab07d0 // indirect
+	golang.org/x/exp v0.0.0-20250506013437-ce4c2cf36ca6 // indirect
 	golang.org/x/net v0.40.0 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 	golang.org/x/text v0.25.0 // indirect
