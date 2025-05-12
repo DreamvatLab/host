@@ -6,8 +6,8 @@ github.com/BurntSushi/toml v1.5.0/go.mod h1:ukJfTF/6rtPPRCnwkur4qwRxa8vTRFBF0uk2
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DreamvatLab/go v1.0.16 h1:Xo0gUQiN4kDkBZmAaJEhNOtOzT66tkT5hQIDqShqjfU=
 github.com/DreamvatLab/go v1.0.16/go.mod h1:JaSaX0/UfL1okq8D0oEe/qKG9/6D/T4KUROwK0CSHGI=
-github.com/DreamvatLab/logs v1.0.2 h1:in0FeTtHo4HNWqFt8lL0fgVe1XAq+SKOZrVRGsqPAMg=
-github.com/DreamvatLab/logs v1.0.2/go.mod h1:KbSw80e/kjkRsuMMneHRvZRUkz5kNjJxHZD2nzRbWkw=
+github.com/DreamvatLab/logs v1.0.3 h1:CJoxp42/XQ38nB78D0R/F+VZ4rCIy5XK5ZRWhoblY7A=
+github.com/DreamvatLab/logs v1.0.3/go.mod h1:pesUVsAJDGMhcXHinPULpP9o22xJjP9b7ipSKA6prjE=
 github.com/DreamvatLab/oauth2go v1.0.16 h1:Zpjqnne9i3gpFtr2pcsEzkZAzx23vYWHLK6T/V4hgp8=
 github.com/DreamvatLab/oauth2go v1.0.16/go.mod h1:CBj+geEt7xAyeH69VuvvgB2ayuoJkzIwDjts2hJ1Das=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
@@ -257,8 +257,8 @@ github.com/tinylib/msgp v1.2.5/go.mod h1:ykjzy2wzgrlvpDCRc4LA8UXy6D8bzMSuAF3WD57
 github.com/tv42/httpunix v0.0.0-20150427012821-b75d8614f926/go.mod h1:9ESjWnEqriFuLhtthL60Sar/7RFoluCcXsuvEwTV5KM=
 github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6KllzawFIhcdPw=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
-github.com/valyala/fasthttp v1.61.0 h1:VV08V0AfoRaFurP1EWKvQQdPTZHiUzaVoulX1aBDgzU=
-github.com/valyala/fasthttp v1.61.0/go.mod h1:wRIV/4cMwUPWnRcDno9hGnYZGh78QzODFfo1LTUhBog=
+github.com/valyala/fasthttp v1.62.0 h1:8dKRBX/y2rCzyc6903Zu1+3qN0H/d2MsxPPmVNamiH0=
+github.com/valyala/fasthttp v1.62.0/go.mod h1:FCINgr4GKdKqV8Q0xv8b+UxPV+H/O5nNFo3D+r54Htg=
 github.com/xyproto/randomstring v1.0.5 h1:YtlWPoRdgMu3NZtP45drfy1GKoojuR7hmRcnhZqKjWU=
 github.com/xyproto/randomstring v1.0.5/go.mod h1:rgmS5DeNXLivK7YprL0pY+lTuhNQW3iGxZ18UQApw/E=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=

@@ -6,7 +6,7 @@ go 1.24.2
 
 require (
 	github.com/DreamvatLab/go v1.0.16
-	github.com/DreamvatLab/logs v1.0.2
+	github.com/DreamvatLab/logs v1.0.3
 	github.com/DreamvatLab/oauth2go v1.0.16
 	github.com/fasthttp/router v1.5.4
 	github.com/fasthttp/session/v2 v2.5.9
@@ -22,7 +22,7 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/redis/go-redis/v9 v9.8.0
-	github.com/valyala/fasthttp v1.61.0
+	github.com/valyala/fasthttp v1.62.0
 	golang.org/x/oauth2 v0.30.0
 	google.golang.org/grpc v1.72.0
 )

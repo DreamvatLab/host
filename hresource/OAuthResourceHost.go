@@ -73,11 +73,20 @@ func (x *OAuthResourceHost) BuildOAuthResourceHost() {
 }
 
 func (x *OAuthResourceHost) AuthHandler(ctx host.IHttpContext) {
+	routeKey := ctx.GetItemString(host.Ctx_RouteKey)
+	area, controller, action := host.GetRoutesByKey(routeKey)
+
 	authHeader := ctx.GetHeader(xhttp.HEADER_AUTH)
 	if authHeader == "" {
-		ctx.SetStatusCode(http.StatusUnauthorized)
-		ctx.WriteString("Authorization header is missing")
-		return
+		if x.PermissionAuditor.CheckRouteWithLevel(area, controller, action, 0, 0, []string{}) {
+			ctx.Next() // 没有提供令牌，但是允许匿名访问
+			return
+		} else {
+			// 没有提供令牌，且不允许匿名访问
+			ctx.SetStatusCode(http.StatusUnauthorized)
+			ctx.WriteString("Authorization header is missing")
+			return
+		}
 	}
 
 	// verify authorization header
@@ -138,8 +147,6 @@ func (x *OAuthResourceHost) AuthHandler(ctx host.IHttpContext) {
 
 	var msgCode string
 	if jwtClaims != nil {
-		routeKey := ctx.GetItemString(host.Ctx_RouteKey)
-		area, controller, action := host.GetRoutesByKey(routeKey)
 
 		roles := xconv.ToInt64(jwtClaims.Set[oauth2core.Claim_Role])
 		level := xconv.ToInt64(jwtClaims.Set[oauth2core.Claim_Level])

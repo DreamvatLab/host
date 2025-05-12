@@ -1,9 +1,11 @@
 package hfasthttp
 
 import (
+	"bytes"
 	"encoding/json"
 	"mime/multipart"
 	"net/http"
+	"strings"
 	"sync"
 
 	"github.com/DreamvatLab/go/xbytes"
@@ -246,7 +248,8 @@ func (x *FastHttpContext) GetMultipartForm() (*multipart.Form, error) {
 }
 
 func (x *FastHttpContext) GetBodyString() string {
-	return x.ctx.Request.String()
+	// return x.ctx.Request.String()
+	return xbytes.BytesToStr(x.ctx.Request.Body())
 }
 func (x *FastHttpContext) GetBodyBytes() []byte {
 	return x.ctx.Request.Body()
@@ -352,6 +355,30 @@ func (x *FastHttpContext) RequestPath() string {
 }
 func (x *FastHttpContext) GetRemoteIP() string {
 	return x.ctx.RemoteIP().String()
+}
+
+func (x *FastHttpContext) GetRealIP() string {
+	var ips []string
+
+	// 从 X-Forwarded-For 获取所有 IP
+	if forwardedFor := x.ctx.Request.Header.Peek("X-Forwarded-For"); len(forwardedFor) > 0 {
+		// 分割所有 IP 地址
+		ipList := bytes.Split(forwardedFor, []byte(","))
+		for _, ip := range ipList {
+			// 去除空格
+			ip = bytes.TrimSpace(ip)
+			if len(ip) > 0 {
+				ips = append(ips, string(ip))
+			}
+		}
+	}
+
+	// 如果没有 X-Forwarded-For，则添加 RemoteIP
+	if len(ips) == 0 {
+		ips = append(ips, x.ctx.RemoteIP().String())
+	}
+
+	return strings.Join(ips, "\n")
 }
 
 func (x *FastHttpContext) UserAgent() string {

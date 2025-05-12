@@ -106,6 +106,7 @@ type (
 		RequestURL() string
 		RequestPath() string
 		GetRemoteIP() string
+		GetRealIP() string
 
 		UserAgent() string
 
