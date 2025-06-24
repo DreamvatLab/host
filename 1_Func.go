@@ -22,6 +22,7 @@ import (
 func ConfigHttpClient(configProvider xconfig.IConfigProvider) {
 	// HTTP client configuration
 	skipCertVerification := configProvider.GetBool("Http.SkipCertVerification")
+	xlog.Debugf("Skip http.DefaultClient certificate verification: %v", skipCertVerification)
 	proxy := configProvider.GetString("Http.Proxy")
 	if skipCertVerification || proxy != "" {
 		// Use custom transport layer if any condition is met
