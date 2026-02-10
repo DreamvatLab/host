@@ -4,13 +4,14 @@ package hlog
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/DreamvatLab/go/xerr"
 	"github.com/DreamvatLab/go/xlog"
-	"github.com/DreamvatLab/go/xtime"
 	"github.com/DreamvatLab/host/hconsul"
 	"github.com/DreamvatLab/host/hgrpc"
 	"github.com/DreamvatLab/logs"
+	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
 // grpcSink implements a logging sink that sends logs to a gRPC service
@@ -27,7 +28,7 @@ func (o *grpcSink) WriteLog(entry *xlog.LogEntry) {
 			Message:      entry.Message,
 			StackTrace:   entry.Stack,
 			Level:        logs.LogLevel(entry.Level),
-			CreatedOnUtc: xtime.UTCNowUnixMS(),
+			CreatedOnUtc: timestamppb.New(time.Now().UTC()),
 		},
 	})
 
