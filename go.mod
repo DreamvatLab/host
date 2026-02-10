@@ -6,7 +6,7 @@ replace github.com/DreamvatLab/go => ../go
 
 require (
 	github.com/DreamvatLab/go v1.0.18
-	github.com/DreamvatLab/logs v1.0.5
+	github.com/DreamvatLab/logs v1.0.6
 	github.com/DreamvatLab/oauth2go v1.0.16
 	github.com/fasthttp/router v1.5.4
 	github.com/fasthttp/session/v2 v2.5.9
@@ -25,7 +25,6 @@ require (
 	github.com/valyala/fasthttp v1.69.0
 	golang.org/x/oauth2 v0.35.0
 	google.golang.org/grpc v1.78.0
-	google.golang.org/protobuf v1.36.11
 )
 
 require (
@@ -67,5 +66,6 @@ require (
 	golang.org/x/sys v0.41.0 // indirect
 	golang.org/x/text v0.34.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20260209200024-4cfbd4190f57 // indirect
+	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )

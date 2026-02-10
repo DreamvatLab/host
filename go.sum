@@ -2,8 +2,8 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
-github.com/DreamvatLab/logs v1.0.5 h1:zKd8l8MJAT1VNmjfPdsnmtT49n/GyDlKGIqhGbUvjJo=
-github.com/DreamvatLab/logs v1.0.5/go.mod h1:tVULmqiDPvDocX5XUdGbvUpZt54ZTw9iRvZS5aNg1pk=
+github.com/DreamvatLab/logs v1.0.6 h1:t8qwOqzzkbpov735x9W8T9ihD216Ju6Fod9mfH/4XME=
+github.com/DreamvatLab/logs v1.0.6/go.mod h1:JvVJNVCtzaqtmuPSXk+0HUGr9aGB7W7eZBFkdzcTpIY=
 github.com/DreamvatLab/oauth2go v1.0.16 h1:Zpjqnne9i3gpFtr2pcsEzkZAzx23vYWHLK6T/V4hgp8=
 github.com/DreamvatLab/oauth2go v1.0.16/go.mod h1:CBj+geEt7xAyeH69VuvvgB2ayuoJkzIwDjts2hJ1Das=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
