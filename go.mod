@@ -5,7 +5,7 @@ go 1.25.5
 replace github.com/DreamvatLab/go => ../go
 
 require (
-	github.com/DreamvatLab/go v1.0.17
+	github.com/DreamvatLab/go v1.0.18
 	github.com/DreamvatLab/logs v1.0.5
 	github.com/DreamvatLab/oauth2go v1.0.16
 	github.com/fasthttp/router v1.5.4
