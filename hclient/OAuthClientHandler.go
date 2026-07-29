@@ -8,7 +8,6 @@ import (
 
 	"github.com/DreamvatLab/go/xbytes"
 	"github.com/DreamvatLab/go/xerr"
-	"github.com/DreamvatLab/go/xlog"
 	"github.com/DreamvatLab/go/xutils"
 	"github.com/DreamvatLab/host"
 	oauth2core "github.com/DreamvatLab/oauth2go/core"
@@ -67,7 +66,9 @@ func (x *OAuthClientHandler) SignInCallbackHandler(ctx host.IHttpContext) {
 	}
 	ctx.RemoveSession(state) // Free memory
 
-	var sessionCodeVerifier, sessionSodeChallengeMethod string
+	// PKCE：RFC 6749 §4.1.2 授权回调只回传 code/state，不再回显 code_challenge。
+	// 客户端只需从 session 取出 code_verifier，在 token 交换时提交；由授权服务器校验。
+	var sessionCodeVerifier string
 	if x.OAuth.PkceRequired {
 		sessionCodeVerifier = ctx.GetSessionString(oauth2core.Form_CodeVerifier)
 		if sessionCodeVerifier == "" {
@@ -76,29 +77,7 @@ func (x *OAuthClientHandler) SignInCallbackHandler(ctx host.IHttpContext) {
 			return
 		}
 		ctx.RemoveSession(oauth2core.Form_CodeVerifier)
-		sessionSodeChallengeMethod = ctx.GetSessionString(oauth2core.Form_CodeChallengeMethod)
-		if sessionSodeChallengeMethod == "" {
-			ctx.WriteString("pkce transformation method does not exist in store")
-			ctx.SetStatusCode(http.StatusBadRequest)
-			return
-		}
 		ctx.RemoveSession(oauth2core.Form_CodeChallengeMethod)
-
-		codeChallenge := ctx.GetFormString(oauth2core.Form_CodeChallenge)
-		codeChallengeMethod := ctx.GetFormString(oauth2core.Form_CodeChallengeMethod)
-
-		if sessionSodeChallengeMethod != codeChallengeMethod {
-			ctx.WriteString("pkce transformation method does not match")
-			xlog.Debugf("session method: '%s', incoming method:'%s'", sessionSodeChallengeMethod, codeChallengeMethod)
-			ctx.SetStatusCode(http.StatusBadRequest)
-			return
-		} else if (sessionSodeChallengeMethod == oauth2core.Pkce_Plain && codeChallenge != oauth2core.ToSHA256Base64URL(sessionCodeVerifier)) ||
-			(sessionSodeChallengeMethod == oauth2core.Pkce_Plain && codeChallenge != sessionCodeVerifier) {
-			ctx.WriteString("pkce code verifiver and chanllenge does not match")
-			xlog.Debugf("session verifiver: '%s', incoming chanllenge:'%s'", sessionCodeVerifier, codeChallenge)
-			ctx.SetStatusCode(http.StatusBadRequest)
-			return
-		}
 	}
 
 	// Exchange token
@@ -115,14 +94,13 @@ func (x *OAuthClientHandler) SignInCallbackHandler(ctx host.IHttpContext) {
 	}
 
 	if x.OAuth.PkceRequired {
-		codeChanllengeParam := oauth2.SetAuthURLParam(oauth2core.Form_CodeVerifier, sessionCodeVerifier)
-		codeChanllengeMethodParam := oauth2.SetAuthURLParam(oauth2core.Form_CodeChallengeMethod, sessionSodeChallengeMethod)
+		// RFC 7636：token 请求只需 code_verifier
+		codeVerifierParam := oauth2.SetAuthURLParam(oauth2core.Form_CodeVerifier, sessionCodeVerifier)
 
-		// Send token exchange request
 		if refreshTokenOption != nil {
-			oauth2Token, err = x.OAuth.Exchange(httpCtx, code, codeChanllengeParam, codeChanllengeMethodParam, refreshTokenOption)
+			oauth2Token, err = x.OAuth.Exchange(httpCtx, code, codeVerifierParam, refreshTokenOption)
 		} else {
-			oauth2Token, err = x.OAuth.Exchange(httpCtx, code, codeChanllengeParam, codeChanllengeMethodParam)
+			oauth2Token, err = x.OAuth.Exchange(httpCtx, code, codeVerifierParam)
 		}
 	} else {
 		if refreshTokenOption != nil {
